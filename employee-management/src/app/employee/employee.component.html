@@ -1,0 +1,31 @@
+<table border="1" class="table">
+  <thead></thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Designation</th>
+    <th>Salary</th>
+    <th>Action</th>
+  </tr>
+
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.empId}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.designation}}</td>
+      <td>{{employee.salary}}</td>
+      <td style="width: 20%;">
+        <div class="btn-group" style="margin-right: 20px;"> <button class="btn btn-primary"
+            [routerLink]="['../updateemployee']" [queryParams]="{'empId': employee.empId}"> Update </button>
+        </div>
+
+        <div class="btn-group" ><button class="btn btn-danger"
+            (click)="deleteEmployee(employee)"> Delete </button>
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+<div class="text-center" style="margin-right: 20px;"> <button class="btn btn btn-success animated swing infinite" [routerLink]="['../addemployee']"> Add </button>
+</div>

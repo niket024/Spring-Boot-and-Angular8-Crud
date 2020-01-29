@@ -7,6 +7,7 @@ and backend with Spring Boot
 
 To run this application 
  ----------------------
+Download mployee-management
 goto cmd:
 goto employee-management directory
 eg.

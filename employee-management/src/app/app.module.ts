@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { SidebarDirectiveComponent } from './sidebar-directive/sidebar-directive.component';
+import { SidebarModule } from 'ng-sidebar';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
     AddEmployeeComponent,
     HeaderComponent,
     FooterComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    SidebarDirectiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    SidebarModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

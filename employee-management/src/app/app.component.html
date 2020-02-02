@@ -6,9 +6,35 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
 <app-header></app-header>
+<ng-sidebar-container (onBackdropClicked)="_onBackdropClicked()" style="width: 20%;">
+  <ng-sidebar [(opened)]="_opened" [mode]="_MODES[_modeNum]" [keyClose]="_keyClose"
+    [position]="_POSITIONS[_positionNum]" [dock]="_dock" [dockedSize]="'50px'"
+    [autoCollapseHeight]="_autoCollapseHeight" [autoCollapseWidth]="_autoCollapseWidth"
+    [closeOnClickOutside]="_closeOnClickOutside" [closeOnClickBackdrop]="_closeOnClickBackdrop"
+    [showBackdrop]="_showBackdrop" [animate]="_animate" [trapFocus]="_trapFocus" [autoFocus]="_autoFocus"
+    [ariaLabel]="'My sidebar'" (onOpenStart)="_onOpenStart()" (onOpened)="_onOpened()" (onCloseStart)="_onCloseStart()"
+    (onClosed)="_onClosed()" (onTransitionEnd)="_onTransitionEnd()">
+    <div class="btn btn-primary">Cources</div>
+    <button type="button" (click)="_toggleOpened()" class="close btn" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <hr>
+    <div class="btn" (click)="getSubCource()">{{name}}</div>
+    <ul *ngFor="let cource of cources" class="">
+      <li class="" (click)="getSubCource(cource)"><a [innerHTML]="cource"></a><span>{{forwardIcon}}</span></li>
+    </ul>
+  </ng-sidebar>
+
+  <div ng-sidebar-content>
+    <header class="demo-header">
+      <button (click)="_toggleOpened()" class="demo-header__toggle">Toggle sidebar</button>
+      <span>ng-sidebar</span>
+    </header>
+
+  </div>
+</ng-sidebar-container>
+
 <div style="margin: 50px;">
   <router-outlet></router-outlet>
 </div>

@@ -15,23 +15,23 @@ export class Employee {
 })
 
 export class HttpClientService {
-
+  apiUrl:string="http://localhost:7070/employees"
   constructor(private httpClient: HttpClient) { }
   public getEmployees() {
     console.log("get Employee");
-    return this.httpClient.get<Employee[]>('http://localhost:8080/employees');
+    return this.httpClient.get<Employee[]>(this.apiUrl);
   }
   public deleteEmployee(employee: Employee) {
     console.log("delete employee");
-    return this.httpClient.delete<Employee>("http://localhost:8080/employees" + "/" + employee.empId);
+    return this.httpClient.delete<Employee>(this.apiUrl+ "/" + employee.empId);
   }
 
   public createEmployee(employee: Employee) {
     console.log("create employee");
-    return this.httpClient.post<Employee>("http://localhost:8080/employees", employee);
+    return this.httpClient.post<Employee>(this.apiUrl, employee);
   }
   public updateEmployee(employee: Employee) {
     console.log("update employee");
-    return this.httpClient.put<Employee>("http://localhost:8080/employees", employee);
+    return this.httpClient.put<Employee>(this.apiUrl, employee);
   }
 }

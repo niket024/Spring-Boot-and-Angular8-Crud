@@ -28,11 +28,13 @@ public class EmployeeController {
 
 	@GetMapping(produces = "application/json")
 	public List<Employee> firstPage() {
+		System.out.println("get employees call");
 		return employeeService.getAllEmployees();
 	}
 
 	@DeleteMapping(path = { "/{id}" })
 	public Employee delete(@PathVariable("id") Integer id) {
+		System.out.println("delete employees call");
 		employeeService.deleteEmployeeById(id);
 		return null;
 	}
@@ -44,13 +46,15 @@ public class EmployeeController {
 
 	@PostMapping
 	public Employee create(@RequestBody Employee emp) {
+		System.out.println("create employees call");
+
 		employeeService.createEmployee(emp);
 		return emp;
 	}
 
 	@PutMapping
 	public Employee update(@RequestBody Employee emp) {
-		System.out.println("update");
+		System.out.println("update employees call");
 		employeeService.updateEmployee(emp);
 		return emp;
 	}

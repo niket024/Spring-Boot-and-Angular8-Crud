@@ -15,7 +15,7 @@ export class Employee {
 })
 
 export class HttpClientService {
-  apiUrl:string="http://localhost:7070/employees"
+  apiUrl:string="http://localhost:7080/employees"
   constructor(private httpClient: HttpClient) { }
   public getEmployees() {
     console.log("get Employee");

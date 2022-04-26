@@ -1,8 +1,8 @@
 # Spring-Boot-and-Angular13-Crud
-Spring-Boot and Angular8 CRUD
+Spring-Boot and Angular13 CRUD
 
 This application is CRUD development where 
-UI is Angular 8
+UI is Angular 13
 and backend with Spring Boot
 
 To run this application 
